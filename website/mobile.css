@@ -1,0 +1,150 @@
+/* pc 화면 */
+@media screen and (min-width:768px) {
+	body{
+		background-color:#5f40d1;
+        scrollbar-width: none;
+        -ms-overflow-style: none;
+	}
+    body::-webkit-scrollbar{display: none;}
+    
+    div{display: none;}
+    img{display: none;}
+    .pc_info{
+        display: block;
+        position: fixed;
+        top: 36%; left: 50%; transform: translate(-50%, 50%);
+        color: #ccecff;
+        text-align: center;
+    }
+    .pc_info h1{font-size: 42px;}
+    .pc_info p{ font-size: 22px; margin-top: 10px;}
+}
+
+
+/* 모바일 화면 */
+@media screen and (max-width:767px) {
+    .pc_info{display: none;}
+
+
+
+
+    /* 메뉴바 */
+    #navi{
+        position: fixed;
+        left: 60px; top: 60px;
+    }
+    .munu{position: relative;}
+
+
+    .hamburger_bg{
+        position: absolute;
+        top: 50%; left: 50%; transform: translate(-50%, -50%);
+        width: 56px; height: 56px; background: #f7f7f7;
+        border-radius: 100%;
+        border: solid 1px #999;
+        cursor: pointer;
+        transition: 0.3s;
+        z-index: 1000;
+    }
+
+    .hamburger_bg:hover{
+        background: #5f40d1;
+    }
+    .hamburger_bg:hover .hamburger{
+        background: #ccecff;
+    }
+    .hamburger_bg:hover .hamburger:before{
+        background: #ccecff;
+    }
+    .hamburger_bg:hover .hamburger:after{
+        background: #ccecff;
+    }
+
+    .hamburger{
+        width: 28px; height: 3px;
+        background: #333;
+        position: absolute;
+        top: 50%; left: 50%; transform: translate(-50%, -50%);
+        transition: 0.4s;
+    }
+    .hamburger:before,
+    .hamburger:after{
+        content: '';
+        position: absolute;
+        width: 28px; height: 3px;
+        background: #333;
+        transition: 0.4s;
+    }
+    .hamburger:before{
+        top: -8px;
+    }
+    .hamburger:after{
+        top: 8px;
+    }
+
+    .menu input[type=checkbox]:checked + .hamburger_bg{
+        background: #5f40d1;
+    }
+    .menu input[type=checkbox]:checked + .hamburger_bg>.hamburger:before{
+        top: 0;
+        transform: rotate(45deg);
+        background: #ccecff;
+    }
+    .menu input[type=checkbox]:checked + .hamburger_bg>.hamburger:after{
+        top: 0;
+        transform: rotate(135deg);
+        background: #ccecff;
+    }
+    .menu input[type=checkbox]:checked + .hamburger_bg>.hamburger{
+        background: rgba(0,0,0,0);
+    }
+    .menu input[type=checkbox]:checked ~ .cont_select{
+        opacity: 1;
+        margin-top: 40px
+    }
+
+    /* 메뉴탭 */
+    .cont_select{
+        position: absolute;
+        margin-left: -30px; margin-top: 40px;
+        width: 200px; height: 300px; background: #f7f7f7;
+        border-radius: 20px;
+        border: solid 1px #999;
+        overflow: hidden;
+        z-index: 900;
+        opacity: 0;
+        transition: 0.3s;
+        margin-top: -30px;
+    }
+    .cont_select ul{
+        margin-top: 30px;
+    }
+    .cont_select li{
+        margin-left: 10px;
+        margin-top: 18px;
+     }
+     .cont_select li label{
+         cursor: pointer;
+         transition: 0.3s;
+         padding: 6px; padding-left: 10px; padding-right: 10px;
+         color: #333;
+     }
+
+
+    .cont_select label:hover{font-size: large; font-weight: bold;}
+    .cont_select input[type=radio]:checked + label{
+        background: #5f40d1; color: #ccecff;
+        font-size: large; font-weight: bold;
+        margin-left: 10px;
+    }
+
+
+
+
+
+
+
+
+
+
+}
